@@ -35,3 +35,17 @@ def import_phone_book (filename):
         for line in lines:
             contact_id, last_name, first_name, middle_name, phone_number = line.strip().split(',')
             phone_book [int (contact_id)] = {'last_name': last_name, 'first_name': first_name, 'middle_name': middle_name, 'phone_number': phone_number}
+
+# блок для копирования данных из одного файла в другой через ввод пользователем номера строки
+# функция для хранения строк из файла
+def read_file(filename):
+    data = []
+    with open(filename, 'r') as file:
+        for line in file:
+            data.append(line.strip())
+    return data
+# функция для чтения данных из файла по строчно
+def write_file (filename,data):
+    with open (filename, 'w') as file:
+        for line in data:
+            file.write(line + 'n')
