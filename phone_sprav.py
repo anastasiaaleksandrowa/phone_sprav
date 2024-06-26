@@ -49,3 +49,17 @@ def write_file (filename,data):
     with open (filename, 'w') as file:
         for line in data:
             file.write(line + 'n')
+# функция для записи данных в файл построчно
+def copy_line (sourse_file, target_file):
+    sourse_data = read_file (sourse_file)
+    target_data = read_file (target_file)
+    print (f"исходный файл {sourse_file} содержит:")
+    for i, line in enumerate (sourse_data, start=1):
+        print (f"строка {i}: {line}")
+    Line_num = int (input("введите номер строки для копирования: "))
+    if Line_num <= len(sourse_data):
+        target_data.append (sourse_data[Line_num - 1])
+        write_file (target_file, target_data)
+        print (f"строка {Line_num} скопирована в файл {target_file}")
+    else:
+        print (" неверный номер строки")
