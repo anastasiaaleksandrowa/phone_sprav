@@ -34,4 +34,4 @@ def import_phone_book (filename):
         lines = file.readlines()
         for line in lines:
             contact_id, last_name, first_name, middle_name, phone_number = line.strip().split(',')
-            phone_book [int (contact_id)] = {'last_name': last_name, 'first_name': first_name, 'middle_name': middle_name, 'phone_number': phone_n
+            phone_book [int (contact_id)] = {'last_name': last_name, 'first_name': first_name, 'middle_name': middle_name, 'phone_number': phone_number}
